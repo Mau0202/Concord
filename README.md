@@ -1,4 +1,4 @@
-# Telao
+# Concord
 
 Uma alternativa simples ao Discord focada em compartilhar tela: salas por link, chat e conexões ponto a ponto por WebRTC.
 

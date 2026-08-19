@@ -60,4 +60,4 @@ wss.on('connection', (socket) => {
 });
 
 const port = process.env.PORT || 3000;
-server.listen(port, () => console.log(`Telao em http://localhost:${port}`));
+server.listen(port, () => console.log(`Concord em http://localhost:${port}`));
