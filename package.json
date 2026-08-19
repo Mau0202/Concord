@@ -1,0 +1,14 @@
+{
+  "name": "telao",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Salas simples para compartilhar tela, com chat e sinalizacao WebRTC.",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "ws": "^8.18.0"
+  }
+}
