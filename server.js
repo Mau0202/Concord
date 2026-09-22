@@ -60,4 +60,15 @@ wss.on('connection', (socket) => {
 });
 
 const port = process.env.PORT || 3000;
-server.listen(port, () => console.log(`Concord em http://localhost:${port}`));
+function startServer() {
+  return new Promise((resolve, reject) => {
+    server.once('error', reject);
+    server.listen(port, () => {
+      server.off('error', reject);
+      console.log(`Concord em http://localhost:${port}`);
+      resolve();
+    });
+  });
+}
+if (require.main === module) startServer().catch((error) => { console.error(error); process.exitCode = 1; });
+module.exports = { startServer };

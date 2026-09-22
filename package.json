@@ -2,13 +2,28 @@
   "name": "concord",
   "version": "1.0.0",
   "private": true,
+  "main": "electron-main.js",
   "description": "Salas simples para compartilhar tela, com chat e sinalizacao WebRTC.",
   "scripts": {
     "start": "node server.js",
-    "dev": "node --watch server.js"
+    "dev": "node --watch server.js",
+    "desktop": "electron .",
+    "dist:win": "electron-builder --win nsis"
   },
   "dependencies": {
     "express": "^4.21.2",
     "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "electron": "^35.1.4",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.concord.share",
+    "productName": "Concord",
+    "directories": { "output": "release" },
+    "files": ["server.js", "electron-main.js", "public/**/*", "package.json"],
+    "win": { "target": ["nsis"], "icon": "public/assets/concord.ico" },
+    "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true }
   }
 }
